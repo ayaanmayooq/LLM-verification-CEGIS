@@ -1,4 +1,5 @@
 class Blocksworld():
+    _actions = ['pickup', 'putdown', 'unstack', 'stack']
     def __init__(self, initial_state, goal_state):
         self.order = self.construct_order(initial_state)
         self.initial_state = self.construct_state(initial_state)
