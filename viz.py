@@ -187,13 +187,13 @@ def render(screen, world):
 def proc_click(
     pos, world, action_buttons, block_buttons, enter_button, action_stack, block_stack
 ):
-    action = get_action_stack(action_buttons, action_stack, pos)
-    block = get_block_stack(block_buttons, block_stack, pos)
+    get_action_stack(action_buttons, action_stack, pos)
+    get_block_stack(block_buttons, block_stack, pos)
     enter_action = check_enter(action_stack, block_stack, enter_button, pos)
     if enter_action:
         print(enter_action)
-        action_stack = []
-        block_stack = []
+        action_stack.clear()
+        block_stack.clear()
         try:
             world.play_move(enter_action)
             world.draw()
