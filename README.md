@@ -11,3 +11,9 @@ Pygame-based vizualization
 
 ### `utils.py`
 Helper methods for assessing blockworld states
+
+
+## TODO
+- [ ] implement verifier
+- [ ] link to cegis
+- [ ] experiments
