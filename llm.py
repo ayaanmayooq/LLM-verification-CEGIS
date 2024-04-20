@@ -2,6 +2,7 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv
 import re
+import ast
 
 load_dotenv()
 
@@ -29,7 +30,7 @@ RETURN ONLY THE SEQUENCE OF COMMANDS. NO ADDITIONAL EXPLANATION. RETURN THE COMM
 
 
 class LanguageModel:
-    def __init__(self):
+    def __init__(self, OPENAI_API_KEY=OPENAI_API_KEY, SYSTEM_PROMPT=SYSTEM_PROMPT):
         self.client = OpenAI(api_key=OPENAI_API_KEY)
         self.system_prompt = SYSTEM_PROMPT
 
@@ -54,6 +55,11 @@ class LanguageModel:
         for match in matches:
             code_snippets.append(match.strip())
         return code_snippets[0] if len(code_snippets) else response
+
+    def solve(self, prompt):
+        response = self.request(prompt)
+        actions = list(ast.literal_eval(response))
+        return actions
 
 
 if __name__ == "__main__":
