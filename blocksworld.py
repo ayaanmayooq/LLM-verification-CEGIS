@@ -9,7 +9,7 @@ class Blocksworld:
         self.arm = None
         self.done = False
         self.actions = []
-        self.draw()
+        # self.draw()
 
     def construct_state(self, given_state):
         state = {}

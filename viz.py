@@ -208,6 +208,7 @@ if __name__ == "__main__":
 
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    pygame.display.set_caption('BLOCKSWORLD')
     screen.fill((255, 255, 255))
     pygame.display.flip()
     # controls
