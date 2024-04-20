@@ -7,7 +7,7 @@ class Blocksworld:
         self.state = self.construct_state(initial_state)
         self.goal_state = self.construct_state(goal_state)
         self.arm = None
-        self.done = False
+        self.done = self.initial_state == self.goal_state
         self.actions = []
         # self.draw()
 

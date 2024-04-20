@@ -1,0 +1,444 @@
+Problem Statement:
+Initial:[['A'], ['B'], ['C'], ['D']]
+Goal:[['A', 'B', 'C', 'D']]
+[ITER-0]======================================
+LLM Prompt:
+```
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[INFO] Unable to parse..retrying
+[ITER-0] LLM Response: [('unstack', 'A', 'B'), ('pickup', 'A'), ('stack', 'A', 'D'), ('unstack', 'C', 'D'), ('pickup', 'C'), ('stack', 'C', 'A'), ('unstack', 'B', 'A'), ('pickup', 'B'), ('stack', 'B', 'C')]
+[ITER-0] Verify Output:
+solved: False
+CE: [('unstack', 'A', 'B'), ('pickup', 'A'), ('stack', 'A', 'D'), ('unstack', 'C', 'D'), ('pickup', 'C'), ('stack', 'C', 'A'), ('unstack', 'B', 'A'), ('pickup', 'B'), ('stack', 'B', 'C')]
+====================================================
+[ITER-1]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'A', 'B'), ('pickup', 'A'), ('stack', 'A', 'D'), ('unstack', 'C', 'D'), ('pickup', 'C'), ('stack', 'C', 'A'), ('unstack', 'B', 'A'), ('pickup', 'B'), ('stack', 'B', 'C')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-1] LLM Response: [('unstack', 'D', 'B'), ('putdown', 'D'), ('unstack', 'C', 'A'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('unstack', 'A', 'A'), ('pickup', 'A'), ('stack', 'A', 'D'), ('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'D'), ('stack', 'D', 'C')]
+[ITER-1] Verify Output:
+solved: False
+CE: [('unstack', 'D', 'B'), ('putdown', 'D'), ('unstack', 'C', 'A'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('unstack', 'A', 'A'), ('pickup', 'A'), ('stack', 'A', 'D'), ('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'D'), ('stack', 'D', 'C')]
+====================================================
+[ITER-2]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'D', 'B'), ('putdown', 'D'), ('unstack', 'C', 'A'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('unstack', 'A', 'A'), ('pickup', 'A'), ('stack', 'A', 'D'), ('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'D'), ('stack', 'D', 'C')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-2] LLM Response: [('pickup', 'A'), ('stack', 'A', 'D'), ('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'D'), ('stack', 'D', 'C')]
+[ITER-2] Verify Output:
+solved: False
+CE: [('pickup', 'A'), ('stack', 'A', 'D'), ('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'D'), ('stack', 'D', 'C')]
+====================================================
+[ITER-3]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('pickup', 'A'), ('stack', 'A', 'D'), ('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'D'), ('stack', 'D', 'C')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-3] LLM Response: [('unstack', 'A', 'B'), ('putdown', 'A'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'C', 'D'), ('putdown', 'C'), ('pickup', 'D'), ('stack', 'D', 'C'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'B'), ('stack', 'B', 'A')]
+[ITER-3] Verify Output:
+solved: False
+CE: [('unstack', 'A', 'B'), ('putdown', 'A'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'C', 'D'), ('putdown', 'C'), ('pickup', 'D'), ('stack', 'D', 'C'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'B'), ('stack', 'B', 'A')]
+====================================================
+[ITER-4]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'A', 'B'), ('putdown', 'A'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'C', 'D'), ('putdown', 'C'), ('pickup', 'D'), ('stack', 'D', 'C'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'B'), ('stack', 'B', 'A')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-4] LLM Response: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A'), ('pickup', 'C'), ('stack', 'C', 'D'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'A'), ('stack', 'A', 'B')]
+[ITER-4] Verify Output:
+solved: False
+CE: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A'), ('pickup', 'C'), ('stack', 'C', 'D'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'A'), ('stack', 'A', 'B')]
+====================================================
+[ITER-5]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A'), ('pickup', 'C'), ('stack', 'C', 'D'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'A'), ('stack', 'A', 'B')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-5] LLM Response: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'D'), ('putdown', 'B'), ('unstack', 'A', 'D'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A'), ('pickup', 'B'), ('stack', 'B', 'D'), ('pickup', 'C'), ('stack', 'C', 'B')]
+[ITER-5] Verify Output:
+solved: False
+CE: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'D'), ('putdown', 'B'), ('unstack', 'A', 'D'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A'), ('pickup', 'B'), ('stack', 'B', 'D'), ('pickup', 'C'), ('stack', 'C', 'B')]
+====================================================
+[ITER-6]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'D'), ('putdown', 'B'), ('unstack', 'A', 'D'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A'), ('pickup', 'B'), ('stack', 'B', 'D'), ('pickup', 'C'), ('stack', 'C', 'B')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-6] LLM Response: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'D'), ('putdown', 'B'), ('unstack', 'A', 'D'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A'), ('pickup', 'B'), ('stack', 'B', 'D'), ('pickup', 'C'), ('stack', 'C', 'B')]
+[ITER-6] Verify Output:
+solved: False
+CE: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'D'), ('putdown', 'B'), ('unstack', 'A', 'D'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A'), ('pickup', 'B'), ('stack', 'B', 'D'), ('pickup', 'C'), ('stack', 'C', 'B')]
+====================================================
+[ITER-7]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'D'), ('putdown', 'B'), ('unstack', 'A', 'D'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A'), ('pickup', 'B'), ('stack', 'B', 'D'), ('pickup', 'C'), ('stack', 'C', 'B')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-7] LLM Response: [('unstack', 'A', 'D'), ('pickup', 'D'), ('stack', 'D', 'A'), ('unstack', 'B', 'D'), ('pickup', 'D'), ('stack', 'D', 'B'), ('unstack', 'C', 'D'), ('pickup', 'D'), ('stack', 'D', 'C')]
+[ITER-7] Verify Output:
+solved: False
+CE: [('unstack', 'A', 'D'), ('pickup', 'D'), ('stack', 'D', 'A'), ('unstack', 'B', 'D'), ('pickup', 'D'), ('stack', 'D', 'B'), ('unstack', 'C', 'D'), ('pickup', 'D'), ('stack', 'D', 'C')]
+====================================================
+[ITER-8]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'A', 'D'), ('pickup', 'D'), ('stack', 'D', 'A'), ('unstack', 'B', 'D'), ('pickup', 'D'), ('stack', 'D', 'B'), ('unstack', 'C', 'D'), ('pickup', 'D'), ('stack', 'D', 'C')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-8] LLM Response: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'D'), ('putdown', 'B'), ('unstack', 'A', 'D'), ('putdown', 'A')]
+[ITER-8] Verify Output:
+solved: False
+CE: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'D'), ('putdown', 'B'), ('unstack', 'A', 'D'), ('putdown', 'A')]
+====================================================
+[ITER-9]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'D'), ('putdown', 'B'), ('unstack', 'A', 'D'), ('putdown', 'A')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-9] LLM Response: [('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'C'), ('stack', 'C', 'A'), ('pickup', 'D'), ('stack', 'D', 'C')]
+[ITER-9] Verify Output:
+solved: False
+CE: [('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'C'), ('stack', 'C', 'A'), ('pickup', 'D'), ('stack', 'D', 'C')]
+====================================================
+[ITER-10]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'C'), ('stack', 'C', 'A'), ('pickup', 'D'), ('stack', 'D', 'C')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-10] LLM Response: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+[ITER-10] Verify Output:
+solved: False
+CE: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+====================================================
+[ITER-11]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-11] LLM Response: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+[ITER-11] Verify Output:
+solved: False
+CE: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+====================================================
+[ITER-12]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-12] LLM Response: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+[ITER-12] Verify Output:
+solved: False
+CE: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+====================================================
+[ITER-13]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-13] LLM Response: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+[ITER-13] Verify Output:
+solved: False
+CE: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+====================================================
+[ITER-14]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[INFO] Unable to parse..retrying
+[ITER-14] LLM Response: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+[ITER-14] Verify Output:
+solved: False
+CE: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+====================================================
+[ITER-15]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'D')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-15] LLM Response: [('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'C'), ('stack', 'C', 'D')]
+[ITER-15] Verify Output:
+solved: False
+CE: [('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'C'), ('stack', 'C', 'D')]
+====================================================
+[ITER-16]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'C'), ('stack', 'C', 'D')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-16] LLM Response: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B')]
+[ITER-16] Verify Output:
+solved: False
+CE: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B')]
+====================================================
+[ITER-17]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-17] LLM Response: [('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'C'), ('stack', 'C', 'D')]
+[ITER-17] Verify Output:
+solved: False
+CE: [('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'C'), ('stack', 'C', 'D')]
+====================================================
+[ITER-18]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'C'), ('stack', 'C', 'D')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-18] LLM Response: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A')]
+[ITER-18] Verify Output:
+solved: False
+CE: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A')]
+====================================================
+[ITER-19]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-19] LLM Response: [('pickup', 'A'), ('stack', 'A', 'D'), ('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'D'), ('stack', 'D', 'C')]
+[ITER-19] Verify Output:
+solved: False
+CE: [('pickup', 'A'), ('stack', 'A', 'D'), ('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'D'), ('stack', 'D', 'C')]
+====================================================
+[ITER-20]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('pickup', 'A'), ('stack', 'A', 'D'), ('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'D'), ('stack', 'D', 'C')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-20] LLM Response: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'C'), ('stack', 'C', 'A'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'D'), ('stack', 'D', 'C')]
+[ITER-20] Verify Output:
+solved: False
+CE: [('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'C'), ('stack', 'C', 'A'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'D'), ('stack', 'D', 'C')]
+====================================================
+[ITER-21]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'D', 'C'), ('putdown', 'D'), ('unstack', 'C', 'B'), ('putdown', 'C'), ('unstack', 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'C'), ('stack', 'C', 'A'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'D'), ('stack', 'D', 'C')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-21] LLM Response: [('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'C'), ('stack', 'C', 'D')]
+[ITER-21] Verify Output:
+solved: False
+CE: [('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'C'), ('stack', 'C', 'D')]
+====================================================
+[ITER-22]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'B'), ('stack', 'B', 'C'), ('pickup', 'C'), ('stack', 'C', 'D')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-22] LLM Response: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A')]
+[ITER-22] Verify Output:
+solved: False
+CE: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A')]
+====================================================
+[ITER-23]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-23] LLM Response: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A')]
+[ITER-23] Verify Output:
+solved: False
+CE: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A')]
+====================================================
+[ITER-24]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-24] LLM Response: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A')]
+[ITER-24] Verify Output:
+solved: False
+CE: [('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A')]
+====================================================
+[ITER-25]======================================
+LLM Prompt:
+```
+
+Your previous solution did not work. This is your previous attempt```
+[('unstack', 'C', 'D'), ('putdown', 'C'), ('unstack', 'B', 'C'), ('putdown', 'B'), ('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'D'), ('stack', 'D', 'A')]
+```
+Try again.
+initial state: [['A'], ['B'], ['C'], ['D']]
+goal state: [['A', 'B', 'C', 'D']].
+Answer:
+```
+[ITER-25] LLM Response: [('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B'), ('pickup', 'D'), ('stack', 'D', 'C')]
+Congratulations! Goal state reached.
+[ITER-25] Verify Output:
+solved: True
+CE: None
+====================================================
+SOLUTION HAS BEEN FOUND 🎉

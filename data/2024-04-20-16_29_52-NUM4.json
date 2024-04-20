@@ -1,0 +1,377 @@
+{
+  "inital-state": [
+    [
+      "A"
+    ],
+    [
+      "B"
+    ],
+    [
+      "C"
+    ],
+    [
+      "D"
+    ]
+  ],
+  "goal-state": [
+    [
+      "A",
+      "B",
+      "C",
+      "D"
+    ]
+  ],
+  "num-blocks": 4,
+  "results": [
+    {
+      "iter": 0,
+      "prompt": "initial state: [['A'], ['B'], ['C'], ['D']]\ngoal state: [['A', 'B', 'C', 'D']].\nAnswer:",
+      "response": [
+        [
+          "pickup",
+          "A"
+        ],
+        [
+          "stack",
+          "A",
+          "B"
+        ],
+        [
+          "pickup",
+          "C"
+        ],
+        [
+          "stack",
+          "C",
+          "D"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "C"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "pickup",
+          "A"
+        ],
+        [
+          "stack",
+          "A",
+          "B"
+        ],
+        [
+          "pickup",
+          "C"
+        ],
+        [
+          "stack",
+          "C",
+          "D"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "C"
+        ]
+      ]
+    },
+    {
+      "iter": 1,
+      "prompt": "\nYour previous solution did not work. This is your previous attempt```\n[('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'C'), ('stack', 'C', 'D'), ('pickup', 'B'), ('stack', 'B', 'C')]\n```\nTry again.\ninitial state: [['A'], ['B'], ['C'], ['D']]\ngoal state: [['A', 'B', 'C', 'D']].\nAnswer:",
+      "response": [
+        [
+          "pickup",
+          "D"
+        ],
+        [
+          "stack",
+          "D",
+          "C"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "pickup",
+          "D"
+        ],
+        [
+          "stack",
+          "D",
+          "C"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 2,
+      "prompt": "\nYour previous solution did not work. This is your previous attempt```\n[('pickup', 'D'), ('stack', 'D', 'C'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nTry again.\ninitial state: [['A'], ['B'], ['C'], ['D']]\ngoal state: [['A', 'B', 'C', 'D']].\nAnswer:",
+      "response": [
+        [
+          "pickup",
+          "D"
+        ],
+        [
+          "stack",
+          "D",
+          "C"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ],
+        [
+          "pickup",
+          "C"
+        ],
+        [
+          "stack",
+          "C",
+          "B"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "pickup",
+          "D"
+        ],
+        [
+          "stack",
+          "D",
+          "C"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ],
+        [
+          "pickup",
+          "C"
+        ],
+        [
+          "stack",
+          "C",
+          "B"
+        ]
+      ]
+    },
+    {
+      "iter": 3,
+      "prompt": "\nYour previous solution did not work. This is your previous attempt```\n[('pickup', 'D'), ('stack', 'D', 'C'), ('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B')]\n```\nTry again.\ninitial state: [['A'], ['B'], ['C'], ['D']]\ngoal state: [['A', 'B', 'C', 'D']].\nAnswer:",
+      "response": [
+        [
+          "pickup",
+          "D"
+        ],
+        [
+          "stack",
+          "D",
+          "C"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ],
+        [
+          "pickup",
+          "C"
+        ],
+        [
+          "stack",
+          "C",
+          "B"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "pickup",
+          "D"
+        ],
+        [
+          "stack",
+          "D",
+          "C"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ],
+        [
+          "pickup",
+          "C"
+        ],
+        [
+          "stack",
+          "C",
+          "B"
+        ]
+      ]
+    },
+    {
+      "iter": 4,
+      "prompt": "\nYour previous solution did not work. This is your previous attempt```\n[('pickup', 'D'), ('stack', 'D', 'C'), ('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B')]\n```\nTry again.\ninitial state: [['A'], ['B'], ['C'], ['D']]\ngoal state: [['A', 'B', 'C', 'D']].\nAnswer:",
+      "response": [
+        [
+          "pickup",
+          "D"
+        ],
+        [
+          "stack",
+          "D",
+          "C"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ],
+        [
+          "pickup",
+          "C"
+        ],
+        [
+          "stack",
+          "C",
+          "B"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "pickup",
+          "D"
+        ],
+        [
+          "stack",
+          "D",
+          "C"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ],
+        [
+          "pickup",
+          "C"
+        ],
+        [
+          "stack",
+          "C",
+          "B"
+        ]
+      ]
+    },
+    {
+      "iter": 5,
+      "prompt": "\nYour previous solution did not work. This is your previous attempt```\n[('pickup', 'D'), ('stack', 'D', 'C'), ('pickup', 'B'), ('stack', 'B', 'A'), ('pickup', 'C'), ('stack', 'C', 'B')]\n```\nTry again.\ninitial state: [['A'], ['B'], ['C'], ['D']]\ngoal state: [['A', 'B', 'C', 'D']].\nAnswer:",
+      "response": [
+        [
+          "pickup",
+          "D"
+        ],
+        [
+          "stack",
+          "D",
+          "C"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ],
+        [
+          "unstack",
+          "D",
+          "C"
+        ],
+        [
+          "putdown",
+          "D"
+        ],
+        [
+          "pickup",
+          "C"
+        ],
+        [
+          "stack",
+          "C",
+          "B"
+        ],
+        [
+          "pickup",
+          "D"
+        ],
+        [
+          "stack",
+          "D",
+          "C"
+        ]
+      ],
+      "SAT": true,
+      "counterexample": null
+    }
+  ]
+}

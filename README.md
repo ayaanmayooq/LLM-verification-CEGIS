@@ -17,3 +17,10 @@ Helper methods for assessing blockworld states
 - [ ] implement verifier
 - [ ] link to cegis
 - [ ] experiments
+
+
+# Experiments
+- [ ] CGEIS vs LLM Pass @ K
+    - 2 - 10 blocks
+    - metric: found solution, number of iterations   
+    - GPT3.5 vs GPT4

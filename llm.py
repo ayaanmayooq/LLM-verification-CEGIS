@@ -18,10 +18,15 @@ You have the following commands available to you:
 - putdown(block): Put down the given block.
 - unstack(block1, block2): Unstack block1 from block2.
 - stack(block1, block2): Stack block1 on block2.
-The blocks are represented as strings.
+The blocks are always represented as strings.
 For example, given this input:
 initial_state = [["A", "B", "C"]]
 goal_state = [["C", "A", "B"]]
+The element left of each stack is on the table. So the initial state is:
+C
+B
+A
+====================
 Return the following output:
 [("unstack", 'C', 'B'), ('putdown', 'C'), ("unstack", 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'C'), ('pickup', 'B'), ('stack', 'B', 'A')]
 IMPORTANT:
@@ -30,25 +35,26 @@ RETURN ONLY THE SEQUENCE OF COMMANDS. NO ADDITIONAL EXPLANATION. RETURN THE COMM
 
 
 class LanguageModel:
-    def __init__(self, OPENAI_API_KEY=OPENAI_API_KEY, SYSTEM_PROMPT=SYSTEM_PROMPT):
+    def __init__(self, OPENAI_API_KEY=OPENAI_API_KEY, SYSTEM_PROMPT=SYSTEM_PROMPT, model_type="gpt-3.5-turbo"):
         self.client = OpenAI(api_key=OPENAI_API_KEY)
         self.system_prompt = SYSTEM_PROMPT
+        self.model_type = model_type
 
     def request(self, prompt):
         completion = self.client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model=self.model_type,
             messages=[
                 {"role": "system", "content": self.system_prompt},
                 {"role": "user", "content": prompt},
             ],
+            temperature=0.5
         )
         response = completion.choices[0].message.content
-        print(response)
         return self.extract_code(response)
 
     def extract_code(self, response):
         if "```" not in response:
-            print("[ERROR] No code block found in response.")
+            print("[INFO] No code block found in response, returning RAW output.")
             return response
         code_snippets = []
         pattern = r"```(.*?)```"
@@ -66,12 +72,12 @@ class LanguageModel:
                 actions = list(ast.literal_eval(response))
                 return actions
             except:
-                print("Unable to parse. Please try again")
+                print("[INFO] Unable to parse..retrying")
 
 
 if __name__ == "__main__":
     lm = LanguageModel()
     response = lm.request(
-        'input: [["A", "B", "C"]]\noutput: [["C", "A", "B"]].\nResult:'
+        'initial state: [["A"], ["B"], ["C"], ["D"]]\ngoal state: [["A", "B", "C", "D"]].\nAnswer:'
     )
     print(response)
