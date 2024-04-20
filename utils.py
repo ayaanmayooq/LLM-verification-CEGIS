@@ -1,9 +1,11 @@
 from blocksworld import Blocksworld
 import random
 
+def get_arm_block(world):
+    return world.arm if world.arm else None
 
 def get_clear_blocks(state):
-    return [k for k in state if len(state[k]) != 1]
+    return [k for k in state if len(state[k])]
 
 
 def get_table_blocks(state):
