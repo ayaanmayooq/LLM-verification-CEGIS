@@ -1,20 +1,23 @@
 class CeGIS:
-    def __init__(self, world, verifier, llm):
-        self.world = world
+    def __init__(self, initial_state, goal_state, verifier, llm):
         self.verifier = verifier
         self.llm = llm
+        self.initial_state = initial_state
+        self.goal_state = goal_state
         
     def run(self):
-        init_state = self.world.initial_state
-        goal_state = self.world.goal_state
+        init_state = self.initial_state
+        goal_state = self.goal_state
         counter_example = None
         solved = False
         while not solved:
             prompt = self.build_prompt(init_state, goal_state, counter_example)
             solution = self.llm.solve(prompt)
-            solved, counter_example = self.verifier.verify(prompt, solution)
-            if solved:
-                counter_example = solution
+
+            print("Actions:", solution)
+            solved, counter_example = self.verifier.verify(solution)
+            # if solved:
+            #     counter_example = solution
     
     def build_prompt(self, init_state, goal_state, counter_example):
         prompt = f"input: {init_state}\noutput: {goal_state}.\nResult:"

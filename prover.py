@@ -47,7 +47,7 @@ def get_state_constaints(world, blockA, blockB, blockAVar, blockBVar, s1, s2):
             state_constraints.append(s1.hand(blockBVar))
         else:
             state_constraints.append(Not(s1.hand(blockBVar)))
-        if blockA in world.state and world.state[blockA][-2] == blockB:
+        if blockA in world.state and len(world.state[blockA]) >= 2 and world.state[blockA][-2] == blockB:
             state_constraints.append(s1.stacked(blockAVar, blockBVar))
         else:
             state_constraints.append(Not(s1.stacked(blockAVar, blockBVar)))
@@ -69,7 +69,7 @@ def check_pickup(world, blockA):
     # x = Int('x')
     # y = Int('y')
     # constraint6 = ForAll([x, y], s1.stacked(x, y) == s2.stacked(x, y))
-    constraints = Not(And(*state_constraints, constraint1, constraint2))
+    constraints = And(*state_constraints, constraint1, constraint2)
 
     solver = Solver()
     solver.add(constraints)
@@ -210,28 +210,34 @@ def check_unstack(world, blockA, blockB):
 
 
 class Verifier:
-    def __init__(self):
-        self.initial_state = [["A", "B", "C"]]
-        self.goal_state = [["C", "A", "B"]]
-        self.world = Blocksworld(self.initial_state, self.goal_state)
-    
+    def __init__(self, initial_state, goal_state):
+        self.initial_state = initial_state[::]
+        self.goal_state = goal_state[::]
+
     def verify(self, solution):
+        print(self.initial_state)
+        world = Blocksworld(self.initial_state[::], self.goal_state[::])
+
         SAT=True
         for idx, action in enumerate(solution):
             if action[0] == 'pickup':
-                SAT = check_pickup(self.world, action[1])
+                SAT = check_pickup(world, action[1])
             if action[0] == 'putdown':
-                SAT = check_putdown(self.world, action[1])
+                SAT = check_putdown(world, action[1])
             if action[0] == 'stack':
-                SAT = check_stack(self.world, action[1], action[2])
+                SAT = check_stack(world, action[1], action[2])
             if action[0] == 'unstack':
-                SAT = check_unstack(self.world, action[1], action[2])
+                SAT = check_unstack(world, action[1], action[2])
             if not SAT:
+                print("Solution has not been found")
+                world.draw()
+                print(action)
+
                 counter_example_str = ', '.join(f'{d}' for d in solution[:idx+1])
                 return (False, counter_example_str)                 
             if SAT:
-                self.world.play_move(action)
-                self.world.draw()
+                world.play_move(action)
+                world.draw()
             # game.play_move(action)
             # game.draw()
         return (True, None)

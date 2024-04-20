@@ -43,6 +43,7 @@ class LanguageModel:
             ],
         )
         response = completion.choices[0].message.content
+        print(response)
         return self.extract_code(response)
 
     def extract_code(self, response):
@@ -57,9 +58,15 @@ class LanguageModel:
         return code_snippets[0] if len(code_snippets) else response
 
     def solve(self, prompt):
-        response = self.request(prompt)
-        actions = list(ast.literal_eval(response))
-        return actions
+        c = 0
+        while c < 3:
+            c += 1
+            try:
+                response = self.request(prompt)
+                actions = list(ast.literal_eval(response))
+                return actions
+            except:
+                print("Unable to parse. Please try again")
 
 
 if __name__ == "__main__":
