@@ -178,6 +178,12 @@ class Verifier:
                 return (False, counter_example_str)                 
             if SAT:
                 world.play_move(action)
+            
+            if world.done:
+                if idx != len(solution)-1:
+                    return (True, 'accidental solve')
+                else:
+                    return (True, None)
                 # world.draw()
             # print('AFTER:', self.initial_state)
         # print(SAT)

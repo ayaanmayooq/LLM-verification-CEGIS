@@ -21,7 +21,7 @@ class CeGIS:
             'results': [],
             'stats': {}
         }
-        self.PREF_MODE = True
+        self.PREF_MODE = False
         
     def run(self):
         counter_example = None
@@ -40,7 +40,7 @@ class CeGIS:
             try:
                 solved, counter_example = self.verifier.verify(solution)
             except:
-                solved, counter_example = False, None
+                solved, counter_example = False, solution
             if not solved and not self.PREF_MODE:
                 counter_example = solution
             print(f'[ITER-{TRY_NUM}] Verify Output:\nsolved: {solved}\nCE: {counter_example}')
