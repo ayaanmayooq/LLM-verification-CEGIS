@@ -1,0 +1,32 @@
+{
+    "meta":
+    {
+        "num-blocks": 2,
+        "models": [
+            "gpt-3.5-turbo",
+            "gpt-4-turbo-preview"
+        ]
+    },
+    "experiments":[
+        {
+            "initial": [["A"], ["B"]],
+            "goal": [["A", "B"]]
+        },
+        {
+            "initial": [["A", "B"]],
+            "goal": [["A"], ["B"]]
+        },
+        {
+            "initial": [["B"], ["A"]],
+            "goal": [["B", "A"]]
+        },
+        {
+            "initial": [["B", "A"]],
+            "goal": [["B"], ["A"]]
+        },
+        {
+            "initial": [["A", "B"]],
+            "goal": [["B", "A"]]
+        }
+    ]
+}

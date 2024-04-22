@@ -28,7 +28,7 @@ class CeGIS:
         solved = False
         print(f'Problem Statement:\nInitial:{self.initial_state}\nGoal:{self.goal_state}')
         TRY_NUM=0
-        MAX_TRIES=100
+        MAX_TRIES=25
         while not solved:
             print(f'[ITER-{TRY_NUM}]======================================')
             prompt = self.build_prompt(self.initial_state, self.goal_state, counter_example)
@@ -50,13 +50,15 @@ class CeGIS:
             self.log_data['results'].append(log_obj)
             self.log_data['stats']['iters']=len(self.log_data['results'])
             self.log_data['stats']['solved']=solved
-            self.dump_logs()
+            # self.dump_logs()
             if solved:
                 print('SOLUTION HAS BEEN FOUND 🎉')
                 break
             TRY_NUM+=1
             if TRY_NUM >= MAX_TRIES:
                 break
+        print(f'[LOG] Experiment Completed. Logs written to {self.exp_dir}')
+        return (solved, TRY_NUM)
     
     
     def build_prompt(self, init_state, goal_state, counter_example):
