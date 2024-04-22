@@ -1,5 +1,10 @@
+import json
+import pandas
 from blocksworld import Blocksworld
 import random
+import os
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 def get_arm_block(world):
     return world.arm if world.arm else None
@@ -66,21 +71,55 @@ def random_initial_state(num_blocks=5, num_stacks=2):
     return stacks
 
 
+def get_exp_data():
+    DATA_PATH = './data'
+    dir = os.listdir(DATA_PATH)
+    df = pandas.DataFrame(columns=["nblocks", "model", "acc", "iters"])
+
+    for file in dir:
+        if file.startswith('exp'):
+            with open(os.path.join(DATA_PATH, file), 'r') as f:
+                data = json.load(f)
+                results = data['results']
+                for model in results:
+                    acc = 0
+                    for expi in results[model]:
+                        if expi['solved']:
+                            acc += 1
+
+                    # if data["meta"] in df["nblocks"].tolist() and model in df["model"].tolist():
+                    #     df.loc[(df["nblocks"] == data["meta"]) & (df["model"] == model), "acc"] += acc
+                    # else:
+                    df = df._append({"nblocks": data["meta"], 'model': model, "acc": acc / len(results[model])}, ignore_index=True)
+
+    df = df.groupby(['nblocks', 'model']).mean()
+
+    return df
+
+
+def experiments_barplot(df):
+    colors = ['#EE7733', '#0077BB', '#33BBEE', '#EE3377', '#CC3311', '#009988', '#BBBBBB']
+    sns.barplot(data=df, x='nblocks', y='acc', hue='model', palette=colors)
+    plt.show()
+
+
 if __name__ == "__main__":
     NUM_BLOCKS = 5
     NUM_STACKS = 2
-    initial_state = random_initial_state(NUM_BLOCKS, NUM_STACKS)
-    print(initial_state)
-    goal_state = random_initial_state(NUM_BLOCKS, NUM_STACKS)
-    while initial_state == goal_state:
-        goal_state = random_initial_state(NUM_BLOCKS, NUM_STACKS)
-    world = Blocksworld(initial_state, goal_state)
-    world.draw()
-    while not world.done:
-        action = get_random_action(world)
-        print(f"random actions: {action}")
-        world.play_move(action)
-        world.draw()
-    print(world.actions)
-    print(world.state)
-    print(world.goal_state)
+    # initial_state = random_initial_state(NUM_BLOCKS, NUM_STACKS)
+    # print(initial_state)
+    # goal_state = random_initial_state(NUM_BLOCKS, NUM_STACKS)
+    # while initial_state == goal_state:
+    #     goal_state = random_initial_state(NUM_BLOCKS, NUM_STACKS)
+    # world = Blocksworld(initial_state, goal_state)
+    # world.draw()
+    # while not world.done:
+    #     action = get_random_action(world)
+    #     print(f"random actions: {action}")
+    #     world.play_move(action)
+    #     world.draw()
+    # print(world.actions)
+    # print(world.state)
+    # print(world.goal_state)
+    df = get_exp_data()
+    experiments_barplot(df)
