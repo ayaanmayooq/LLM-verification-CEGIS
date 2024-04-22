@@ -21,14 +21,14 @@ class CeGIS:
             'results': [],
             'stats': {}
         }
-        self.PREF_MODE = False
+        self.PREF_MODE = True
         
     def run(self):
         counter_example = None
         solved = False
         print(f'Problem Statement:\nInitial:{self.initial_state}\nGoal:{self.goal_state}')
         TRY_NUM=0
-        MAX_TRIES=25
+        MAX_TRIES=50
         while not solved:
             print(f'[ITER-{TRY_NUM}]======================================')
             prompt = self.build_prompt(self.initial_state, self.goal_state, counter_example)
@@ -37,7 +37,10 @@ class CeGIS:
             if not solution:
                 solution = []
             print(f'[ITER-{TRY_NUM}] LLM Response: {solution}')
-            solved, counter_example = self.verifier.verify(solution)
+            try:
+                solved, counter_example = self.verifier.verify(solution)
+            except:
+                solved, counter_example = False, None
             if not solved and not self.PREF_MODE:
                 counter_example = solution
             print(f'[ITER-{TRY_NUM}] Verify Output:\nsolved: {solved}\nCE: {counter_example}')
@@ -64,11 +67,11 @@ class CeGIS:
     
     
     def build_prompt(self, init_state, goal_state, counter_example):
-        prompt = f"Try again. initial state: {init_state}\ngoal state: {goal_state}.\nAnswer:"
+        prompt = f"Try again.\ninitial state: {init_state}\ngoal state: {goal_state}.\nAnswer:"
         if counter_example:
             # play around with prefix/full solution
             if self.PREF_MODE:
-                counter_prompt = counter_example + "\nAny plan with the above prefix is not correct. Try again.\n"
+                counter_prompt =f"\nAny plan with the following prefix is not correct.\n{counter_example}\nTry again.\n"
             else: 
                 counter_prompt = f"\nYour previous solution DID NOT WORK. This is your previous attempt```\n{counter_example}\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\n"
             prompt = counter_prompt + prompt

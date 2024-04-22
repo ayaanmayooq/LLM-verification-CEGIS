@@ -22,14 +22,14 @@ The blocks are always represented as strings.
 For example, given this input:
 initial_state = [["A", "B", "C"]]
 goal_state = [["C", "A", "B"]]
+answer:
+[("unstack", 'C', 'B'), ('putdown', 'C'), ("unstack", 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'C'), ('pickup', 'B'), ('stack', 'B', 'A')]
+IMPORTANT Notes:
 The element left of each stack is on the table. So the initial state is:
 C
 B
 A
 ====================
-Return the following output:
-[("unstack", 'C', 'B'), ('putdown', 'C'), ("unstack", 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'C'), ('pickup', 'B'), ('stack', 'B', 'A')]
-IMPORTANT:
 RETURN ONLY THE SEQUENCE OF COMMANDS. NO ADDITIONAL EXPLANATION. RETURN THE COMMANDS INSIDE OF A CODEBLOCK.
 """
 
@@ -47,7 +47,7 @@ class LanguageModel:
                 {"role": "system", "content": self.system_prompt},
                 {"role": "user", "content": prompt},
             ],
-            temperature=0.5
+            temperature=0.1
         )
         response = completion.choices[0].message.content
         return self.extract_code(response)
@@ -69,9 +69,12 @@ class LanguageModel:
             c += 1
             try:
                 response = self.request(prompt)
+                print(response)
                 actions = list(ast.literal_eval(response))
                 return actions
-            except:
+            except KeyboardInterrupt:
+                exit(0)
+            except Exception as e:
                 print("[INFO] Unable to parse..retrying")
 
 

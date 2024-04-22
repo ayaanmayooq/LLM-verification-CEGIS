@@ -1,0 +1,49 @@
+{
+  "meta": 3,
+  "results": {
+    "gpt-3.5-turbo": [
+      {
+        "solved": false,
+        "iters": 10
+      },
+      {
+        "solved": false,
+        "iters": 10
+      },
+      {
+        "solved": false,
+        "iters": 10
+      },
+      {
+        "solved": false,
+        "iters": 10
+      },
+      {
+        "solved": false,
+        "iters": 10
+      }
+    ],
+    "gpt-4-turbo-preview": [
+      {
+        "solved": false,
+        "iters": 10
+      },
+      {
+        "solved": false,
+        "iters": 10
+      },
+      {
+        "solved": true,
+        "iters": 0
+      },
+      {
+        "solved": true,
+        "iters": 0
+      },
+      {
+        "solved": true,
+        "iters": 2
+      }
+    ]
+  }
+}
