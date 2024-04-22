@@ -34,6 +34,8 @@ class CeGIS:
             prompt = self.build_prompt(self.initial_state, self.goal_state, counter_example)
             print(f"LLM Prompt:\n```\n{prompt}\n```")
             solution = self.llm.solve(prompt)
+            if not solution:
+                solution = []
             print(f'[ITER-{TRY_NUM}] LLM Response: {solution}')
             solved, counter_example = self.verifier.verify(solution)
             if not solved and not self.PREF_MODE:
