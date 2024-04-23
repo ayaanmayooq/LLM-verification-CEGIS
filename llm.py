@@ -8,29 +8,49 @@ load_dotenv()
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
+# SYSTEM_PROMPT = """
+# You are a helpful assistant for solving blockworlds tasks.
+# You are given an input world state and goal state and you
+# must output a sequence of commands that moves blocks from the input state to the goal state.
+# The input world state is represented as a list of stacks of blocks.
+# You have the following commands available to you:
+# - pickup(block): Pick up the given block.
+# - putdown(block): Put down the given block.
+# - unstack(block1, block2): Unstack block1 from block2.
+# - stack(block1, block2): Stack block1 on block2.
+# The blocks are always represented as strings.
+# For example, given this input:
+# initial_state = [["A", "B", "C"]]
+# goal_state = [["C", "A", "B"]]
+# The element left of each stack is on the table. So the initial state is:
+# C
+# B
+# A
+# ====================
+# Return the following output:
+# [("unstack", 'C', 'B'), ('putdown', 'C'), ("unstack", 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'C'), ('pickup', 'B'), ('stack', 'B', 'A')]
+# IMPORTANT:
+# Do not perform invalid commands. For example, for stack ["A", "B"], you cannot unstack "A" from "B" because "A" is on the table and "B" is stacked on "A".
+# RETURN ONLY THE SEQUENCE OF COMMANDS AS A SINGLE LINE. NO ADDITIONAL EXPLANATION. RETURN THE COMMANDS INSIDE OF A CODEBLOCK.
+# """
+
 SYSTEM_PROMPT = """
 You are a helpful assistant for solving blockworlds tasks.
 You are given an input world state and goal state and you
-must output a sequence of commands that moves blocks from the input state to the goal state.
-The input world state is represented as a list of stacks of blocks.
 You have the following commands available to you:
 - pickup(block): Pick up the given block.
 - putdown(block): Put down the given block.
-- unstack(block1, block2): Unstack block1 from block2.
+- unstack(block1, block2): Unstack block1 from block2. 
 - stack(block1, block2): Stack block1 on block2.
-The blocks are always represented as strings.
-For example, given this input:
-initial_state = [["A", "B", "C"]]
-goal_state = [["C", "A", "B"]]
-The element left of each stack is on the table. So the initial state is:
-C
-B
-A
-====================
-Return the following output:
+EXAMPLE:
+initial state: [["A", "B", "C"]]
+goal state: [["C", "A", "B"]]
+Answer:
 [("unstack", 'C', 'B'), ('putdown', 'C'), ("unstack", 'B', 'A'), ('putdown', 'B'), ('pickup', 'A'), ('stack', 'A', 'C'), ('pickup', 'B'), ('stack', 'B', 'A')]
 IMPORTANT:
-Do not perform invalid commands. For example, for stack ["A", "B"], you cannot unstack "A" from "B" because "A" is on the table and "B" is stacked on "A".
+Do not perform invalid commands. 
+Left most blocks are closest to the table, and right most blocks are stacked on top. So [A, B, C] means A is on the table, B is on top of A, and C is on top of B.
+So for [C,D] you must use (unstack, 'D', 'C').
 RETURN ONLY THE SEQUENCE OF COMMANDS AS A SINGLE LINE. NO ADDITIONAL EXPLANATION. RETURN THE COMMANDS INSIDE OF A CODEBLOCK.
 """
 
@@ -70,13 +90,13 @@ class LanguageModel:
             c += 1
             try:
                 response = self.request(prompt)
-                print(response)
                 actions = list(ast.literal_eval(response))
                 return actions
             except KeyboardInterrupt:
                 exit(0)
             except Exception as e:
-                print("[INFO] Unable to parse..retrying")
+                # print("[INFO] Unable to parse..retrying")
+                pass
 
 
 if __name__ == "__main__":
