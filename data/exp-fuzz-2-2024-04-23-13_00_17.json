@@ -93,5 +93,6 @@
         "iters": 1
       }
     ]
-  }
+  },
+  "fuzzing": true
 }

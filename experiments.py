@@ -6,12 +6,13 @@ from prover import Verifier
 import json
 from datetime import datetime
 
-def run_experiment(config_file):
+def run_experiment(config_file, fuzzing_enabled=False):
     with open(config_file, "r") as f:
         config = json.load(f)
     exp_results = {
         'meta': config['meta']['num-blocks'],
         'results': {},
+        'fuzzing': fuzzing_enabled
     }
     exp_dir = f'data/exp{config["meta"]["num-blocks"]}-{datetime.now().strftime("%Y-%m-%d-%H_%M_%S")}.json'
     for model in config["meta"]["models"]:
@@ -23,7 +24,7 @@ def run_experiment(config_file):
             model_type = model
             verifier = Verifier(initial_state, goal_state)
             LLM = LanguageModel(OPENAI_API_KEY, SYSTEM_PROMPT, model_type)
-            cegis = CeGIS(verifier, LLM)
+            cegis = CeGIS(verifier, LLM, fuzzing_enabled)
             solved, iters = cegis.run()
             exp_results['results'][model].append({
                 "solved": solved,
