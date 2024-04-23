@@ -2,6 +2,7 @@ import json
 from datetime import datetime
 import os
 import sys
+import tqdm
 
 class CeGIS:
     def __init__(self, verifier, llm):
@@ -22,6 +23,7 @@ class CeGIS:
             'stats': {}
         }
         self.PREF_MODE = False
+        self.logging_enabled = False
         
     def run(self):
         counter_example = None
@@ -29,40 +31,42 @@ class CeGIS:
         print(f'Problem Statement:\nInitial:{self.initial_state}\nGoal:{self.goal_state}')
         TRY_NUM=0
         MAX_TRIES=50
-        while not solved:
-            print(f'[ITER-{TRY_NUM}]======================================')
+        iter_loop = tqdm.tqdm(range(50))
+        for _ in iter_loop:
             prompt = self.build_prompt(self.initial_state, self.goal_state, counter_example)
-            print(f"LLM Prompt:\n```\n{prompt}\n```")
             solution = self.llm.solve(prompt)
             if not solution:
                 solution = []
-            print(f'[ITER-{TRY_NUM}] LLM Response: {solution}')
             try:
                 solved, counter_example = self.verifier.verify(solution)
             except:
                 solved, counter_example = False, solution
             if not solved and not self.PREF_MODE:
                 counter_example = solution
-            print(f'[ITER-{TRY_NUM}] Verify Output:\nsolved: {solved}\nCE: {counter_example}')
-            print(f'====================================================')
-            log_obj = {
-                'iter': TRY_NUM,
-                'prompt': prompt,
-                'response': solution,
-                'SAT': solved,
-                'counterexample': counter_example
-            }
-            self.log_data['results'].append(log_obj)
-            self.log_data['stats']['iters']=len(self.log_data['results'])
-            self.log_data['stats']['solved']=solved
+            TRY_NUM+=1
+            if self.logging_enabled:
+                print(f'[ITER-{TRY_NUM}]======================================')
+                print(f"LLM Prompt:\n```\n{prompt}\n```")
+                print(f'[ITER-{TRY_NUM}] LLM Response: {solution}')
+                print(f'[ITER-{TRY_NUM}] Verify Output:\nsolved: {solved}\nCE: {counter_example}')
+                print(f'====================================================')
+                log_obj = {
+                    'iter': TRY_NUM,
+                    'prompt': prompt,
+                    'response': solution,
+                    'SAT': solved,
+                    'counterexample': counter_example
+                }
+                self.log_data['results'].append(log_obj)
+                self.log_data['stats']['iters']=len(self.log_data['results'])
+                self.log_data['stats']['solved']=solved
             # self.dump_logs()
             if solved:
                 print('SOLUTION HAS BEEN FOUND 🎉')
                 break
-            TRY_NUM+=1
             if TRY_NUM >= MAX_TRIES:
                 break
-        print(f'[LOG] Experiment Completed. Logs written to {self.exp_dir}')
+        # print(f'[LOG] Experiment Completed. Logs written to {self.exp_dir}')
         return (solved, TRY_NUM)
     
     
@@ -71,9 +75,9 @@ class CeGIS:
         if counter_example:
             # play around with prefix/full solution
             if self.PREF_MODE:
-                counter_prompt =f"\nAny plan with the following prefix is not correct.\n{counter_example}\nTry again.\n"
+                counter_prompt =f"Any plan with the following prefix is not correct.\n{counter_example}\nTry again.\n"
             else: 
-                counter_prompt = f"\nYour previous solution DID NOT WORK. This is your previous attempt```\n{counter_example}\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\n"
+                counter_prompt = f"Your previous solution DID NOT WORK. This is your previous attempt\n```\n{counter_example}\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\n"
             prompt = counter_prompt + prompt
         return prompt
 
