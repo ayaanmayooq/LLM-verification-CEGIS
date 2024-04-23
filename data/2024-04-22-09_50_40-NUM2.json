@@ -1,1 +1,70 @@
-{"meta": {"inital-state": [["A"], ["B"]], "goal-state": [["A", "B"]], "num-blocks": 2, "model_type": "gpt-3.5-turbo"}, "results": [{"iter": 0, "prompt": "Try again. initial state: [['A'], ['B']]\ngoal state: [['A', 'B']].\nAnswer:", "response": [["pickup", "A"], ["stack", "A", "B"]], "SAT": false, "counterexample": [["pickup", "A"], ["stack", "A", "B"]]}, {"iter": 1, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('pickup', 'A'), ('stack', 'A', 'B')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A'], ['B']]\ngoal state: [['A', 'B']].\nAnswer:", "response": [["pickup", "B"], ["stack", "B", "A"]], "SAT": true, "counterexample": null}], "stats": {"iters": 2, "solved": true}}
+{
+  "meta": {
+    "inital-state": [
+      [
+        "A"
+      ],
+      [
+        "B"
+      ]
+    ],
+    "goal-state": [
+      [
+        "A",
+        "B"
+      ]
+    ],
+    "num-blocks": 2,
+    "model_type": "gpt-3.5-turbo"
+  },
+  "results": [
+    {
+      "iter": 0,
+      "prompt": "Try again. initial state: [['A'], ['B']]\ngoal state: [['A', 'B']].\nAnswer:",
+      "response": [
+        [
+          "pickup",
+          "A"
+        ],
+        [
+          "stack",
+          "A",
+          "B"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "pickup",
+          "A"
+        ],
+        [
+          "stack",
+          "A",
+          "B"
+        ]
+      ]
+    },
+    {
+      "iter": 1,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('pickup', 'A'), ('stack', 'A', 'B')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A'], ['B']]\ngoal state: [['A', 'B']].\nAnswer:",
+      "response": [
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": true,
+      "counterexample": null
+    }
+  ],
+  "stats": {
+    "iters": 2,
+    "solved": true
+  }
+}

@@ -17,7 +17,7 @@ def run_experiment(config_file):
     for model in config["meta"]["models"]:
         exp_results['results'][model] = []
         for exp in config["experiments"]:
-            print(f"Running Experiment: {exp}")
+            print(f"Running Experiment: {exp} with model: {model}")
             initial_state = exp["initial"]
             goal_state = exp["goal"]
             model_type = model
@@ -42,5 +42,6 @@ if __name__ == "__main__":
     # LLM = LanguageModel(OPENAI_API_KEY, SYSTEM_PROMPT, model_type)
     # cegis = CeGIS(verifier, LLM)
     # cegis.run()
-    config_file = "config/exp-4.json"
+    # config_file = "config/auto-exp-3.json"
+    config_file = "config/exp-3.json"
     run_experiment(config_file)

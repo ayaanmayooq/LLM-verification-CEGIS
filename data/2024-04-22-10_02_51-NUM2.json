@@ -1,1 +1,43 @@
-{"meta": {"inital-state": [["B", "A"]], "goal-state": [["B"], ["A"]], "num-blocks": 2, "model_type": "gpt-4-turbo-preview"}, "results": [{"iter": 0, "prompt": "Try again. initial state: [['B', 'A']]\ngoal state: [['B'], ['A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"]], "SAT": true, "counterexample": null}], "stats": {"iters": 1, "solved": true}}
+{
+  "meta": {
+    "inital-state": [
+      [
+        "B",
+        "A"
+      ]
+    ],
+    "goal-state": [
+      [
+        "B"
+      ],
+      [
+        "A"
+      ]
+    ],
+    "num-blocks": 2,
+    "model_type": "gpt-4-turbo-preview"
+  },
+  "results": [
+    {
+      "iter": 0,
+      "prompt": "Try again. initial state: [['B', 'A']]\ngoal state: [['B'], ['A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ]
+      ],
+      "SAT": true,
+      "counterexample": null
+    }
+  ],
+  "stats": {
+    "iters": 1,
+    "solved": true
+  }
+}

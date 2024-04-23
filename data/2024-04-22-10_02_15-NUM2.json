@@ -1,1 +1,1141 @@
-{"meta": {"inital-state": [["A", "B"]], "goal-state": [["B", "A"]], "num-blocks": 2, "model_type": "gpt-3.5-turbo"}, "results": [{"iter": 0, "prompt": "Try again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["pickup", "A"], ["stack", "A", "B"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["pickup", "A"], ["stack", "A", "B"]]}, {"iter": 1, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('pickup', 'A'), ('stack', 'A', 'B')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 2, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 3, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 4, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 5, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 6, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 7, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 8, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 9, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 10, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 11, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 12, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 13, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 14, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 15, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 16, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 17, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 18, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 19, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 20, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 21, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 22, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 23, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}, {"iter": 24, "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": [["unstack", "A", "B"], ["putdown", "A"], ["pickup", "B"], ["stack", "B", "A"]]}], "stats": {"iters": 25, "solved": false}}
+{
+  "meta": {
+    "inital-state": [
+      [
+        "A",
+        "B"
+      ]
+    ],
+    "goal-state": [
+      [
+        "B",
+        "A"
+      ]
+    ],
+    "num-blocks": 2,
+    "model_type": "gpt-3.5-turbo"
+  },
+  "results": [
+    {
+      "iter": 0,
+      "prompt": "Try again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "pickup",
+          "A"
+        ],
+        [
+          "stack",
+          "A",
+          "B"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "pickup",
+          "A"
+        ],
+        [
+          "stack",
+          "A",
+          "B"
+        ]
+      ]
+    },
+    {
+      "iter": 1,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('pickup', 'A'), ('stack', 'A', 'B')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 2,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 3,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 4,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 5,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 6,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 7,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 8,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 9,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 10,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 11,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 12,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 13,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 14,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 15,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 16,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 17,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 18,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 19,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 20,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 21,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 22,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 23,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    },
+    {
+      "iter": 24,
+      "prompt": "\nYour previous solution DID NOT WORK. This is your previous attempt```\n[('unstack', 'A', 'B'), ('putdown', 'A'), ('pickup', 'B'), ('stack', 'B', 'A')]\n```\nYOU MUST TRY A DIFFERENT SOLUTION.\nTry again. initial state: [['A', 'B']]\ngoal state: [['B', 'A']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ]
+    }
+  ],
+  "stats": {
+    "iters": 25,
+    "solved": false
+  }
+}

@@ -64,7 +64,6 @@ def random_initial_state(num_blocks=5, num_stacks=2):
     split_points = random.sample(range(1, num_blocks), num_stacks - 1)
     split_points.sort()
     split_points = [0] + split_points + [num_blocks]
-    print(split_points)
     stacks = []
     for i in range(num_stacks):
         stacks.append(blocks[split_points[i] : split_points[i + 1]])
@@ -96,6 +95,39 @@ def get_exp_data():
 
     return df
 
+def generate_dataset(nb, ne):
+    nblocks = nb
+    out= {
+    "meta":
+    {
+        "num-blocks": nb,
+        "models": [
+            "gpt-3.5-turbo",
+            "gpt-4-turbo-preview"
+        ]
+    },
+    "experiments":[]
+    }
+    counter = 0
+    while counter < ne:
+        ns=random.randint(1, nblocks)
+        initial_state = random_initial_state(nblocks, ns)
+        ns=random.randint(1, nblocks)
+        goal_state = random_initial_state(nblocks, ns)
+        while initial_state == goal_state:
+            ns=random.randint(1, nblocks)
+            goal_state = random_initial_state(nblocks, ns)
+        exists = False
+        # for exp in out["experiments"]:
+        #     if exp["initial"] == initial_state and exp["goal"] == goal_state:
+        #         exists = True
+        #         break
+        # if not exists:
+        out["experiments"].append({"initial": initial_state, "goal": goal_state})
+        counter += 1
+        print(counter)
+    with open(f'config/auto-exp-{nblocks}.json', 'w') as f:
+        json.dump(out, f)
 
 def experiments_barplot(df):
     colors = ['#EE7733', '#0077BB', '#33BBEE', '#EE3377', '#CC3311', '#009988', '#BBBBBB']
@@ -121,5 +153,6 @@ if __name__ == "__main__":
     # print(world.actions)
     # print(world.state)
     # print(world.goal_state)
-    df = get_exp_data()
-    experiments_barplot(df)
+    # df = get_exp_data()
+    # experiments_barplot(df)
+    generate_dataset(3, 20)

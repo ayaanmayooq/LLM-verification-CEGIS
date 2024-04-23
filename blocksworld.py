@@ -37,7 +37,7 @@ class Blocksworld:
                 self.order[idx] = ""
                 self.actions.append(action)
             else:
-                print("Invalid action.")
+                print(f"Invalid action. {action}")
 
         elif action[0] == "putdown":
             block = action[1]
@@ -51,7 +51,7 @@ class Blocksworld:
                     self.order[idx] = block
                 self.actions.append(action)
             else:
-                print("Invalid action.")
+                print(f"Invalid action. {action}")
 
         elif action[0] == "unstack":
             block1, block2 = action[1], action[2]
@@ -69,7 +69,7 @@ class Blocksworld:
                 self.order[idx] = block2
                 self.actions.append(action)
             else:
-                print("Invalid action.")
+                print(f"Invalid action. {action}")
 
         elif action[0] == "stack":
             block1, block2 = action[1], action[2]
@@ -82,9 +82,9 @@ class Blocksworld:
                 self.order[idx] = block1
                 self.actions.append(action)
             else:
-                print("Invalid action.")
+                print(f"Invalid action. {action}")
         else:
-            print("Invalid action.")
+            print(f"Invalid action. {action}")
 
         if self.state == self.goal_state:
             print("Congratulations! Goal state reached.")

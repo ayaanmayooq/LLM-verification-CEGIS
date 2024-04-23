@@ -8,7 +8,7 @@ class State:
         self.hand = Function(f'{name}_hand', IntSort(), BoolSort())
         self.stacked = Function(f'{name}_stacked', IntSort(), IntSort(), BoolSort())
         self.clear = Function(f'{name}_clear', IntSort(), BoolSort())
-        self.handsfree = Function(f'{name}_handsfree', BoolSort())
+        self.handsfree = Function(f'{name}_handsfree',IntSort(), BoolSort())
 
 
 def get_state_constaints(world, blockA, blockB, blockAVar, blockBVar, s1, s2):
@@ -17,7 +17,7 @@ def get_state_constaints(world, blockA, blockB, blockAVar, blockBVar, s1, s2):
     arm_block = get_arm_block(world)
     state_constraints = []
     if arm_block:
-        state_constraints.append(s1.handsfree())
+        state_constraints.append(s1.handsfree(blockAVar))
     if blockA in clear_blocks:
         state_constraints.append(s1.clear(blockAVar))
     else:
@@ -93,20 +93,22 @@ def check_stack(world, blockA, blockB):
     x = Int('x')
     y = Int('y')
     constraints = get_state_constaints(world, blockA, blockB, block1, block2, s1, s2)
-    constraints.append(Or(
-        And(
-            # If the block1 is being stacked from the table
-            s1.table(block1), # The block1 is on the table in state s1
-            Not(s1.stacked(block1, block2)), # Neither block1 nor block2 are stacked on each other in state s1
-            s1.clear(block1), # Block1 is clear in state s1
-            s1.clear(block2), # Block2 is clear in state s1
-        ),
+    constraints.append(
+        # Or(
+        # And(
+        #     # If the block1 is being stacked from the table
+        #     s1.table(block1), # The block1 is on the table in state s1
+        #     Not(s1.stacked(block1, block2)), # Neither block1 nor block2 are stacked on each other in state s1
+        #     s1.clear(block1), # Block1 is clear in state s1
+        #     s1.clear(block2), # Block2 is clear in state s1
+        # ),
         And(
             s1.hand(block1), # The block1 is in the agent's hand in state s1
             Not(s1.stacked(block1, block2)), # Neither block1 nor block2 are stacked on each other in state s1
             s1.clear(block2), # Block2 is clear in state s1
         )
-    ))
+    )
+    # )
     # If the block1 is being stacked from the hand
     all_constraints = And(*constraints)
     solver = Solver()
