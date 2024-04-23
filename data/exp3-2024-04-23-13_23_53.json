@@ -1,0 +1,90 @@
+{
+  "meta": 3,
+  "fuzzing": true,
+  "results": {
+    "gpt-3.5-turbo": [
+      {
+        "solved": true,
+        "iters": 10
+      },
+      {
+        "solved": false,
+        "iters": 50
+      },
+      {
+        "solved": true,
+        "iters": 4
+      },
+      {
+        "solved": true,
+        "iters": 1
+      },
+      {
+        "solved": false,
+        "iters": 50
+      },
+      {
+        "solved": false,
+        "iters": 50
+      },
+      {
+        "solved": true,
+        "iters": 10
+      },
+      {
+        "solved": true,
+        "iters": 1
+      },
+      {
+        "solved": true,
+        "iters": 5
+      },
+      {
+        "solved": true,
+        "iters": 36
+      }
+    ],
+    "gpt-4-turbo-preview": [
+      {
+        "solved": true,
+        "iters": 1
+      },
+      {
+        "solved": true,
+        "iters": 14
+      },
+      {
+        "solved": true,
+        "iters": 1
+      },
+      {
+        "solved": true,
+        "iters": 1
+      },
+      {
+        "solved": true,
+        "iters": 32
+      },
+      {
+        "solved": true,
+        "iters": 1
+      },
+      {
+        "solved": true,
+        "iters": 7
+      },
+      {
+        "solved": true,
+        "iters": 1
+      },
+      {
+        "solved": false,
+        "iters": 50
+      },
+      {
+        "solved": true,
+        "iters": 1
+      }
+    ]
+  }
+}

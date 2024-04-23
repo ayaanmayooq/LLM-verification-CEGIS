@@ -5,6 +5,7 @@ from utils import random_initial_state
 from prover import Verifier
 import json
 from datetime import datetime
+import sys
 
 def run_experiment(config_file, fuzzing_enabled=False):
     with open(config_file, "r") as f:
@@ -45,4 +46,7 @@ if __name__ == "__main__":
     # cegis.run()
     # config_file = "config/auto-exp-3.json"
     config_file = "config/exp-3.json"
+    args = sys.argv
+    if len(args) > 1:
+        config_file = f"config/exp-{args[1]}.json"
     run_experiment(config_file)
