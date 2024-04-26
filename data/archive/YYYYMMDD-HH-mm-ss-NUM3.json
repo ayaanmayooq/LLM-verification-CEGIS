@@ -1,1 +1,198 @@
-{"inital-state": [["A"], ["B"], ["C"]], "goal-state": [["A", "B", "C"]], "num-blocks": 3, "results": [{"iter": 0, "prompt": "initial state: [['A'], ['B'], ['C']]\ngoal state: [['A', 'B', 'C']].\nAnswer:", "response": [["pickup", "A"], ["stack", "A", "C"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": "('pickup', 'A'), ('stack', 'A', 'C'), ('pickup', 'B'), ('stack', 'B', 'A')"}, {"iter": 1, "prompt": "('pickup', 'A'), ('stack', 'A', 'C'), ('pickup', 'B'), ('stack', 'B', 'A')\nAny plan with the above prefix is not correct. Try again.\ninitial state: [['A'], ['B'], ['C']]\ngoal state: [['A', 'B', 'C']].\nAnswer:", "response": [["unstack", "A", "B"], ["putdown", "A"], ["unstack", "B", "C"], ["putdown", "B"], ["pickup", "A"], ["stack", "A", "B"], ["pickup", "C"], ["stack", "C", "A"]], "SAT": false, "counterexample": "('unstack', 'A', 'B')"}, {"iter": 2, "prompt": "('unstack', 'A', 'B')\nAny plan with the above prefix is not correct. Try again.\ninitial state: [['A'], ['B'], ['C']]\ngoal state: [['A', 'B', 'C']].\nAnswer:", "response": [["pickup", "A"], ["stack", "A", "B"], ["pickup", "C"], ["stack", "C", "A"], ["pickup", "B"], ["stack", "B", "C"]], "SAT": false, "counterexample": "('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'C'), ('stack', 'C', 'A'), ('pickup', 'B')"}, {"iter": 3, "prompt": "('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'C'), ('stack', 'C', 'A'), ('pickup', 'B')\nAny plan with the above prefix is not correct. Try again.\ninitial state: [['A'], ['B'], ['C']]\ngoal state: [['A', 'B', 'C']].\nAnswer:", "response": [["unstack", "C", "B"], ["putdown", "C"], ["unstack", "B", "A"], ["putdown", "B"], ["pickup", "A"], ["stack", "A", "C"], ["pickup", "B"], ["stack", "B", "A"]], "SAT": false, "counterexample": "('unstack', 'C', 'B')"}, {"iter": 4, "prompt": "('unstack', 'C', 'B')\nAny plan with the above prefix is not correct. Try again.\ninitial state: [['A'], ['B'], ['C']]\ngoal state: [['A', 'B', 'C']].\nAnswer:", "response": [["pickup", "B"], ["stack", "B", "A"], ["pickup", "C"], ["stack", "C", "B"]], "SAT": true, "counterexample": null}]}
+{
+  "inital-state": [
+    [
+      "A"
+    ],
+    [
+      "B"
+    ],
+    [
+      "C"
+    ]
+  ],
+  "goal-state": [
+    [
+      "A",
+      "B",
+      "C"
+    ]
+  ],
+  "num-blocks": 3,
+  "results": [
+    {
+      "iter": 0,
+      "prompt": "initial state: [['A'], ['B'], ['C']]\ngoal state: [['A', 'B', 'C']].\nAnswer:",
+      "response": [
+        [
+          "pickup",
+          "A"
+        ],
+        [
+          "stack",
+          "A",
+          "C"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": "('pickup', 'A'), ('stack', 'A', 'C'), ('pickup', 'B'), ('stack', 'B', 'A')"
+    },
+    {
+      "iter": 1,
+      "prompt": "('pickup', 'A'), ('stack', 'A', 'C'), ('pickup', 'B'), ('stack', 'B', 'A')\nAny plan with the above prefix is not correct. Try again.\ninitial state: [['A'], ['B'], ['C']]\ngoal state: [['A', 'B', 'C']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "A",
+          "B"
+        ],
+        [
+          "putdown",
+          "A"
+        ],
+        [
+          "unstack",
+          "B",
+          "C"
+        ],
+        [
+          "putdown",
+          "B"
+        ],
+        [
+          "pickup",
+          "A"
+        ],
+        [
+          "stack",
+          "A",
+          "B"
+        ],
+        [
+          "pickup",
+          "C"
+        ],
+        [
+          "stack",
+          "C",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": "('unstack', 'A', 'B')"
+    },
+    {
+      "iter": 2,
+      "prompt": "('unstack', 'A', 'B')\nAny plan with the above prefix is not correct. Try again.\ninitial state: [['A'], ['B'], ['C']]\ngoal state: [['A', 'B', 'C']].\nAnswer:",
+      "response": [
+        [
+          "pickup",
+          "A"
+        ],
+        [
+          "stack",
+          "A",
+          "B"
+        ],
+        [
+          "pickup",
+          "C"
+        ],
+        [
+          "stack",
+          "C",
+          "A"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "C"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": "('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'C'), ('stack', 'C', 'A'), ('pickup', 'B')"
+    },
+    {
+      "iter": 3,
+      "prompt": "('pickup', 'A'), ('stack', 'A', 'B'), ('pickup', 'C'), ('stack', 'C', 'A'), ('pickup', 'B')\nAny plan with the above prefix is not correct. Try again.\ninitial state: [['A'], ['B'], ['C']]\ngoal state: [['A', 'B', 'C']].\nAnswer:",
+      "response": [
+        [
+          "unstack",
+          "C",
+          "B"
+        ],
+        [
+          "putdown",
+          "C"
+        ],
+        [
+          "unstack",
+          "B",
+          "A"
+        ],
+        [
+          "putdown",
+          "B"
+        ],
+        [
+          "pickup",
+          "A"
+        ],
+        [
+          "stack",
+          "A",
+          "C"
+        ],
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ]
+      ],
+      "SAT": false,
+      "counterexample": "('unstack', 'C', 'B')"
+    },
+    {
+      "iter": 4,
+      "prompt": "('unstack', 'C', 'B')\nAny plan with the above prefix is not correct. Try again.\ninitial state: [['A'], ['B'], ['C']]\ngoal state: [['A', 'B', 'C']].\nAnswer:",
+      "response": [
+        [
+          "pickup",
+          "B"
+        ],
+        [
+          "stack",
+          "B",
+          "A"
+        ],
+        [
+          "pickup",
+          "C"
+        ],
+        [
+          "stack",
+          "C",
+          "B"
+        ]
+      ],
+      "SAT": true,
+      "counterexample": null
+    }
+  ]
+}

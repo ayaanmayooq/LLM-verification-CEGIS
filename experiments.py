@@ -6,6 +6,7 @@ from prover import Verifier
 import json
 from datetime import datetime
 import sys
+import argparse
 
 def run_experiment(config_file, fuzzing_enabled=False):
     with open(config_file, "r") as f:
@@ -19,7 +20,7 @@ def run_experiment(config_file, fuzzing_enabled=False):
     for model in config["meta"]["models"]:
         exp_results['results'][model] = []
         for exp in config["experiments"]:
-            print(f"Running Experiment: {exp} with model: {model}")
+            print(f"Running Experiment: {exp}\nModel: {model}\nFuzzing: {fuzzing_enabled}")
             initial_state = exp["initial"]
             goal_state = exp["goal"]
             model_type = model
@@ -35,6 +36,13 @@ def run_experiment(config_file, fuzzing_enabled=False):
         json.dump(exp_results, f)
         
 
+def parse_args():
+    parser = argparse.ArgumentParser(description='Run experiments')
+    parser.add_argument('config', type=str, help='config file')
+    parser.add_argument('--fuzzing', action='store_true', help='enable fuzzing')
+    args = parser.parse_args()
+    return args
+
 if __name__ == "__main__":
     # initial_state = [["A"], ["B"], ["C"], ["D"]]
     # goal_state = [["A", "B", "C", "D"]]
@@ -45,8 +53,9 @@ if __name__ == "__main__":
     # cegis = CeGIS(verifier, LLM)
     # cegis.run()
     # config_file = "config/auto-exp-3.json"
-    config_file = "config/exp-3.json"
-    args = sys.argv
-    if len(args) > 1:
-        config_file = f"config/exp-{args[1]}.json"
-    run_experiment(config_file)
+    # config_file = "config/exp-3.json"
+    args = parse_args()
+    # args = sys.argv
+    # if len(args) > 1:
+    #     config_file = f"config/exp-{args[1]}.json"
+    run_experiment(args.config, fuzzing_enabled=args.fuzzing)

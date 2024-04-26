@@ -16,8 +16,8 @@ COLOR_MAP = {
     "A": (255, 0, 0),
     "B": (0, 255, 0),
     "C": (0, 0, 255),
-    "D": (255, 255, 0),
-    "E": (0, 255, 255),
+    "D": (216, 200, 0),
+    "E": (0, 216, 200),
     "F": (255, 0, 255),
     "G": (255, 255, 255),
     "H": (128, 128, 128),
@@ -202,8 +202,71 @@ def proc_click(
 
 
 if __name__ == "__main__":
+    # initial_state = [["A", "B", "C"]]
+    # goal_state = [["C", "A", "B"]]
+    # initial_state = [["A"],[  "B"],[  "C"],[  "D"]  ]
+    # goal_state= [
+    #     ["A","B","C","D"]
+    # ]
+    # actions = [
+    #     [
+    #       "pickup",
+    #       "D"
+    #     ],
+    #     [
+    #       "stack",
+    #       "D",
+    #       "C"
+    #     ],
+    #     [
+    #       "pickup",
+    #       "B"
+    #     ],
+    #     [
+    #       "stack",
+    #       "B",
+    #       "A"
+    #     ],
+    #     [
+    #       "unstack",
+    #       "D",
+    #       "C"
+    #     ],
+    #     [
+    #       "putdown",
+    #       "D"
+    #     ],
+    #     [
+    #       "pickup",
+    #       "C"
+    #     ],
+    #     [
+    #       "stack",
+    #       "C",
+    #       "B"
+    #     ],
+    #     [
+    #       "pickup",
+    #       "D"
+    #     ],
+    #     [
+    #       "stack",
+    #       "D",
+    #       "C"
+    #     ]
+    #   ]
     initial_state = [["A", "B", "C"]]
     goal_state = [["C", "A", "B"]]
+    actions = [
+        ("unstack", "C", "B"),
+        ("putdown", "C"),
+        ("unstack", "B", "A"),
+        ("putdown", "B"),
+        ("pickup", "A"),
+        ("stack", "A", "C"),
+        ("pickup", "B"),
+        ("stack", "B", "A"),
+    ]
     world = Blocksworld(initial_state, goal_state)
 
     pygame.init()
@@ -222,10 +285,11 @@ if __name__ == "__main__":
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            # if event.type == pygame.KEYDOWN:
-            #     if len(actions) > 0:
-            #         world.play_move(actions.pop(0))
-            #         world.draw()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT:
+                    if len(actions) > 0:
+                        world.play_move(actions.pop(0))
+                        world.draw()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos()
                 proc_click(

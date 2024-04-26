@@ -32,8 +32,8 @@ class CeGIS:
         solved = False
         print(f'Problem Statement:\nInitial:{self.initial_state}\nGoal:{self.goal_state}')
         TRY_NUM = 0
-        MAX_TRIES = 50
-        iter_loop = tqdm.tqdm(range(50))
+        MAX_TRIES = 15
+        iter_loop = tqdm.tqdm(range(MAX_TRIES))
         for _ in iter_loop:
             prompt = self.build_prompt(self.initial_state, self.goal_state, counter_example)
             solution = self.llm.solve(prompt)
@@ -127,3 +127,4 @@ class CeGIS:
         if random.random() > 0.8:
             random.shuffle(fuzzed_solution)
         return fuzzed_solution
+    
